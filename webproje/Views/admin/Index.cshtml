@@ -1,0 +1,23 @@
+﻿@model IEnumerable<webproje.Models.Purchases>
+    @{
+    ViewBag.Title = "İstanbul Kültür Üniversitesi";
+    }
+
+    <h2 class="white">Purchases</h2>
+
+
+    <table class="table white">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.NameSurname)</th>
+            <th>@Html.DisplayNameFor(model => model.Mail)</th>
+            <th>@Html.DisplayNameFor(model => model.Gender)</th>
+        </tr>
+
+        @foreach(var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.NameSurname)</td>
+            <td>@Html.DisplayFor(modelItem => item.Mail)</td>
+            <td>@Html.DisplayFor(modelItem => item.Gender)</td>
+        </tr>
+    }
+    </table>

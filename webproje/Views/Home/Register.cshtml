@@ -1,0 +1,39 @@
+﻿@model webproje.Models.Users
+@{
+    ViewBag.Title = "İstanbul Kültür Üniversitesi";
+}
+
+<h1 style="color:white">Register Form Page.</h1>
+
+@using (Html.BeginForm("Register", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+@Html.AntiForgeryToken()
+<h4 style="color:white">Create a new account.</h4>
+<hr />
+<div class="container">
+    <div class="table white">@Html.ValidationSummary("", new { @class = "text-danger" })</div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.userName, new { @class = "col-md-2 control-label" })
+        <div style="color:white">
+            @Html.TextBoxFor(m => m.userName, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.password, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.password, new { @class = "form-control" })
+        </div>
+    </div>
+    <br>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Submit" />
+        </div>
+    </div>
+</div>
+        }
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

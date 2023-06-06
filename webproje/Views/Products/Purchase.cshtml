@@ -1,0 +1,40 @@
+﻿@model webproje.Models.Purchases
+
+@{
+
+        ViewBag.Title = "İstanbul Kültür Üniversitesi";
+
+}
+@section styles{
+    <link rel="Stylesheet" href="@Href("~/Content/1.css")" />
+}
+
+@using(Html.BeginForm("MakePurchase","Products", FormMethod.Post))
+{
+<div class="form">
+    <div class="input">
+        <div class="inner">@Html.LabelFor(model => model.NameSurname)</div>
+        <div class="outer">@Html.EditorFor(model => model.NameSurname)</div>           
+            
+        </div>
+        <div class="input">
+            <div class="inner">
+                @Html.LabelFor(model => model.Mail)
+            </div>
+            <div class="outer">
+                @Html.EditorFor(model => model.Mail)
+            </div>
+        </div>
+        <div class="input">
+            <div class="inner">@Html.LabelFor(model => model.Gender)</div>
+            <div class="outer">@Html.EditorFor(model => model.Gender)</div> 
+        </div>
+        <div class="button">
+            <input type="submit" value="Purchase" />
+        </div>
+
+        <p>
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+}

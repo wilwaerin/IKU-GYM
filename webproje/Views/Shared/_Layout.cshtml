@@ -1,0 +1,74 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   @RenderSection("styles",required:false)
+    
+    <link rel="icon" href="@Url.Content("~/Content/assets/fav.jpg")" type="image/x-icon">
+</head>
+<body>
+
+   
+    <table>
+        <tr>
+            <td><img src="@Url.Content("~/Content/assets/home.jpg")" class="png"></td>
+            <td>
+                <div class="nav_bar">
+                    @Html.ActionLink("Home", "Index", "Home")
+                    @Html.ActionLink("About", "About", "Home")
+                    @Html.ActionLink("Contact", "Contact", "Home")
+                    @Html.ActionLink("Blog", "Blog", "Home")
+                    @Html.ActionLink("Product", "Index", "Products")
+                    
+                    
+                </div>
+            </td>
+            <td>
+                <div class="login">
+                    @if (User.Identity.IsAuthenticated) {
+                    @Html.ActionLink("AdminPage", "Index", "admin")
+                    @Html.ActionLink("Logout","Logout","Login")
+                    @Html.Raw("  ")
+                    @User.Identity.Name
+                }
+
+
+
+                    else{
+                    @Html.ActionLink("Register", "Register", "Home")
+                    @Html.ActionLink("Log In", "Index", "Login")
+
+
+                    }
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    
+    
+        @RenderBody()
+        
+    
+    <footer id="footer">
+
+        <div>
+            <p class="footer-inside"><a href="https://www.iku.edu.tr/tr/istanbulkulturuniversitesi"> @ViewBag.Title </a></p>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/customBundle")
+</body>
+
+</html>

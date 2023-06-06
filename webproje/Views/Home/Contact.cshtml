@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "İstanbul Kültür Üniversitesi";
+}
+
+
+
+    <div class="container">
+        <form name="contactform" onsubmit="return validate()" method="post">
+
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+            <label for="email">Write Your E-mail</label>
+            <textarea id="email" name="email" placeholder="Write your email"></textarea>
+
+            <label for="country">Country</label>
+
+            <select id="country" name="country">
+                <option value="istanbul">İstanbul</option>
+                <option value="ankara">Ankara</option>
+                <option value="izmir">İzmir</option>
+            </select>
+
+
+
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+            <input type="submit" value="Submit">
+
+        </form>
+    </div>
+
+
+    <div class="contact1">
+        <h1 class="con">Customer Service</h1>
+
+        <table>
+            <tr>
+                <td><img src="@Url.Content("~/Content/assets/fon.jpg")" alt="" class="fon"></td>
+                <td><p class="phone_number">0212 498 41 41</p></td>
+            </tr>
+        </table>
+
+        <h2 class="work_hours">Working Hours</h2>
+        <h3 class="work">All Day</h3>
+        <h4 class="work">09:00 - 21:00</h4>
+
+
+    </div>
+  
+    

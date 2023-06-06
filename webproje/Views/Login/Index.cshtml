@@ -1,0 +1,33 @@
+﻿@model webproje.Models.Users
+
+@{
+    ViewBag.Title = "İstanbul Kültür Üniversitesi";
+}
+
+@section styles{
+    <link rel="Stylesheet" href="@Href("~/Content/1.css")" />
+}
+
+@using(Html.BeginForm("","Login", FormMethod.Post))
+{
+
+    <div class="form">
+        <div class="input">
+            <div class="inner">User Name :</div>
+            <div class="outer">@Html.EditorFor(model => model.userName)</div>
+
+        </div>
+        <div class="input">
+            <div class="inner">Password :</div>
+            <div class="outer">@Html.EditorFor(model => model.password)</div>
+        </div>
+        <div class="button">
+            <input type="submit" value="Login" />
+        </div>
+        <div class="error">
+            <div class="inner">@ViewBag.Message</div>
+        </div>
+    </div>
+
+}
+
