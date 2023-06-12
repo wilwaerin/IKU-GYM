@@ -1,2 +1,0 @@
-You have to import IKUGYM.bak folder to your sql because we pull datas from that bak folder.
-If you don't pull it you may not see the data (it can be img or text).
